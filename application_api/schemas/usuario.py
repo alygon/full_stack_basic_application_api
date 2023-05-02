@@ -8,7 +8,6 @@ from schemas import ComentarioSchema
 class UsuarioSchema(BaseModel):
     login: str = "alygon"
     nome: str = "Alysson Gonçalves"
-    senha: str = "12345"
 
 
 class UsuarioBuscaSchema(BaseModel):
@@ -27,7 +26,7 @@ def apresenta_usuarios(usuarios: List[Usuario]):
             "nome": usuario.nome
         })
 
-    return {"produtos": result}
+    return {"usuarios": result}
 
 
 class UsuarioViewSchema(BaseModel):

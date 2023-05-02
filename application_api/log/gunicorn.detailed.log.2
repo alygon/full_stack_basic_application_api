@@ -1,65 +1,33 @@
-[2023-05-01 00:21:09,497] WARNING add_usuario() L46   Erro ao adicionar usuário 'alygon', Login de usuário já cadastrado! - call_trace=/home/alysson/Documentos/full_stack_basic_application_api/application_api/app.py L46  
-[2023-05-01 00:21:09,498] INFO _log() L224  127.0.0.1 - - [01/May/2023 00:21:09] "[31m[1mPOST /usuario HTTP/1.1[0m" 409 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-01 00:21:34,240] INFO _log() L224  127.0.0.1 - - [01/May/2023 00:21:34] "POST /usuario HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-01 00:22:12,645] ERROR log_exception() L1449 Exception on /usuario [GET] - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py L1449
-Traceback (most recent call last):
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 1517, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 1503, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask_openapi3/scaffold.py", line 109, in wrapper
-    resp = _do_wrapper(
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask_openapi3/do_wrapper.py", line 135, in _do_wrapper
-    response = func(**request_kwargs)
-  File "/home/alysson/Documentos/full_stack_basic_application_api/application_api/app.py", line 78, in get_usuario
-    usuario_id = query.id
-AttributeError: 'UsuarioBuscaSchema' object has no attribute 'id'
-[2023-05-01 00:22:12,647] INFO _log() L224  127.0.0.1 - - [01/May/2023 00:22:12] "[35m[1mGET /usuario?login=alygon HTTP/1.1[0m" 500 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-01 00:22:46,216] INFO _log() L224  127.0.0.1 - - [01/May/2023 00:22:46] "POST /cometario HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-01 00:23:11,163] ERROR log_exception() L1449 Exception on /usuario [GET] - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py L1449
-Traceback (most recent call last):
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 1517, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 1503, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask_openapi3/scaffold.py", line 109, in wrapper
-    resp = _do_wrapper(
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask_openapi3/do_wrapper.py", line 135, in _do_wrapper
-    response = func(**request_kwargs)
-  File "/home/alysson/Documentos/full_stack_basic_application_api/application_api/app.py", line 78, in get_usuario
-    usuario_id = query.id
-AttributeError: 'UsuarioBuscaSchema' object has no attribute 'id'
-[2023-05-01 00:23:11,163] INFO _log() L224  127.0.0.1 - - [01/May/2023 00:23:11] "[35m[1mGET /usuario?login=alygon HTTP/1.1[0m" 500 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-01 00:23:25,583] INFO _log() L224  127.0.0.1 - - [01/May/2023 00:23:25] "DELETE /usuario?login=alygon HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-01 00:23:36,011] ERROR log_exception() L1449 Exception on /usuario [GET] - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py L1449
-Traceback (most recent call last):
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 1517, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 1503, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask_openapi3/scaffold.py", line 109, in wrapper
-    resp = _do_wrapper(
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask_openapi3/do_wrapper.py", line 135, in _do_wrapper
-    response = func(**request_kwargs)
-  File "/home/alysson/Documentos/full_stack_basic_application_api/application_api/app.py", line 78, in get_usuario
-    usuario_id = query.id
-AttributeError: 'UsuarioBuscaSchema' object has no attribute 'id'
-[2023-05-01 00:23:36,012] INFO _log() L224  127.0.0.1 - - [01/May/2023 00:23:36] "[35m[1mGET /usuario?login=alygon HTTP/1.1[0m" 500 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 04:55:10,943] INFO _log() L224  127.0.0.1 - - [02/May/2023 04:55:10] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 04:55:10,946] INFO _log() L224  127.0.0.1 - - [02/May/2023 04:55:10] "[36mGET /openapi/static/images/redoc.svg HTTP/1.1[0m" 304 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 04:55:10,949] INFO _log() L224  127.0.0.1 - - [02/May/2023 04:55:10] "[36mGET /openapi/static/images/rapidoc.svg HTTP/1.1[0m" 304 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 04:55:11,918] INFO _log() L224  127.0.0.1 - - [02/May/2023 04:55:11] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 04:55:11,939] INFO _log() L224  127.0.0.1 - - [02/May/2023 04:55:11] "GET /openapi/static/css/swagger-ui.css HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 04:55:11,943] INFO _log() L224  127.0.0.1 - - [02/May/2023 04:55:11] "GET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 04:55:11,944] INFO _log() L224  127.0.0.1 - - [02/May/2023 04:55:11] "GET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 04:55:12,109] INFO _log() L224  127.0.0.1 - - [02/May/2023 04:55:12] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 04:55:25,334] INFO _log() L224  127.0.0.1 - - [02/May/2023 04:55:25] "POST /cometario HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 04:59:53,624] INFO _log() L224  127.0.0.1 - - [02/May/2023 04:59:53] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 05:00:06,506] INFO _log() L224  127.0.0.1 - - [02/May/2023 05:00:06] "POST /usuario HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 05:01:34,178] INFO _log() L224  127.0.0.1 - - [02/May/2023 05:01:34] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 05:01:49,281] INFO _log() L224  127.0.0.1 - - [02/May/2023 05:01:49] "POST /usuario HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 05:01:57,611] INFO _log() L224  127.0.0.1 - - [02/May/2023 05:01:57] "OPTIONS /usuario?login=alygon80 HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 05:01:57,627] INFO _log() L224  127.0.0.1 - - [02/May/2023 05:01:57] "DELETE /usuario?login=alygon80 HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 05:02:01,297] INFO _log() L224  127.0.0.1 - - [02/May/2023 05:02:01] "OPTIONS /usuario?login=alygon70 HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 05:02:01,309] INFO _log() L224  127.0.0.1 - - [02/May/2023 05:02:01] "DELETE /usuario?login=alygon70 HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 05:02:04,522] INFO _log() L224  127.0.0.1 - - [02/May/2023 05:02:04] "OPTIONS /usuario?login=alygon HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 05:02:04,536] INFO _log() L224  127.0.0.1 - - [02/May/2023 05:02:04] "DELETE /usuario?login=alygon HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 11:53:05,994] INFO _log() L224  127.0.0.1 - - [02/May/2023 11:53:05] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 11:56:28,890] INFO _log() L224  127.0.0.1 - - [02/May/2023 11:56:28] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 12:03:27,122] INFO _log() L224  127.0.0.1 - - [02/May/2023 12:03:27] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 12:03:35,326] INFO _log() L224  127.0.0.1 - - [02/May/2023 12:03:35] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 13:57:13,892] INFO _log() L224  127.0.0.1 - - [02/May/2023 13:57:13] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 13:59:14,110] INFO _log() L224  127.0.0.1 - - [02/May/2023 13:59:14] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 14:00:41,454] INFO _log() L224  127.0.0.1 - - [02/May/2023 14:00:41] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 14:00:59,342] INFO _log() L224  127.0.0.1 - - [02/May/2023 14:00:59] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 14:02:17,670] INFO _log() L224  127.0.0.1 - - [02/May/2023 14:02:17] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 14:03:14,478] INFO _log() L224  127.0.0.1 - - [02/May/2023 14:03:14] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 14:03:21,077] INFO _log() L224  127.0.0.1 - - [02/May/2023 14:03:21] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 14:04:03,369] INFO _log() L224  127.0.0.1 - - [02/May/2023 14:04:03] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 14:04:54,335] INFO _log() L224  127.0.0.1 - - [02/May/2023 14:04:54] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-02 14:09:35,067] INFO _log() L224  127.0.0.1 - - [02/May/2023 14:09:35] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 

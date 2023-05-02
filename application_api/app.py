@@ -13,7 +13,7 @@ CORS(app)
 
 home_tag = Tag(name="Documentação", description="Seleção de documentação: Swagger, Redoc ou RapiDoc")
 usuario_tag = Tag(name="Usuario", description="Adição, visualização e remoção de usuários à base")
-comentario_tag = Tag(name="Comentario", description="Adição de um comentário por um usuário cadastrado na base")
+comentario_tag = Tag(name="Comentario", description="Adição e visualização de comentários à base")
 
 
 @app.get('/', tags=[home_tag])
@@ -27,8 +27,7 @@ def add_usuario(form: UsuarioSchema):
  
     usuario = Usuario(
         login=form.login,
-        nome=form.nome,
-        senha=form.senha)
+        nome=form.nome)
     logger.debug(f"Adicionando usuário de login: '{usuario.login}'")
     try:
         # criando conexão com a base
@@ -111,7 +110,7 @@ def del_usuario(query: UsuarioBuscaSchema):
         return {"mensagem": error_msg}, 404
 
 
-@app.post('/cometario', tags=[comentario_tag],
+@app.post('/comentario', tags=[comentario_tag],
           responses={"200": UsuarioViewSchema, "404": ErrorSchema})
 def add_comentario(form: ComentarioSchema):
     
