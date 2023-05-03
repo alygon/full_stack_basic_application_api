@@ -1,67 +1,33 @@
-[2023-05-03 03:48:54,346] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-03 03:49:07,727] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/model/usuario.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-03 03:49:07,832] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-03 03:49:15,412] INFO _log() L224  127.0.0.1 - - [03/May/2023 03:49:15] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-03 03:49:20,997] INFO _log() L224  127.0.0.1 - - [03/May/2023 03:49:20] "OPTIONS /usuario?login=alygon HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-03 03:49:21,013] INFO _log() L224  127.0.0.1 - - [03/May/2023 03:49:21] "DELETE /usuario?login=alygon HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-03 03:51:20,328] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/model/usuario.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-03 03:51:20,428] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-03 03:51:40,971] ERROR log_exception() L1449 Exception on /usuarios [GET] - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py L1449
-Traceback (most recent call last):
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
-    self.dialect.do_execute(
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such table: usuario
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask_cors/extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 1517, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask/app.py", line 1503, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask_openapi3/scaffold.py", line 109, in wrapper
-    resp = _do_wrapper(
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/flask_openapi3/do_wrapper.py", line 135, in _do_wrapper
-    response = func(**request_kwargs)
-  File "/home/alysson/Documentos/full_stack_basic_application_api/application_api/app.py", line 63, in get_usuarios
-    usuarios = session.query(Usuario).all()
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2772, in all
-    return self._iter().all()
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2907, in _iter
-    result = self.session.execute(
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1712, in execute
-    result = conn._execute_20(statement, params or {}, execution_options)
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
-    return meth(self, args_10style, kwargs_10style, execution_options)
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 333, in _execute_on_connection
-    return connection._execute_clauseelement(
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
-    ret = self._execute_context(
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
-    self._handle_dbapi_exception(
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
-    util.raise_(
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 208, in raise_
-    raise exception
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
-    self.dialect.do_execute(
-  File "/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: usuario
-[SQL: SELECT usuario.pk_usuario AS usuario_pk_usuario, usuario.login AS usuario_login, usuario.nome AS usuario_nome, usuario.data_cadastro AS usuario_data_cadastro 
-FROM usuario]
-(Background on this error at: https://sqlalche.me/e/14/e3q8)
-[2023-05-03 03:51:40,981] INFO _log() L224  127.0.0.1 - - [03/May/2023 03:51:40] "[35m[1mGET /usuarios HTTP/1.1[0m" 500 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-03 03:52:07,768] WARNING add_usuario() L51   Erro ao adicionar usuário 'alygon', Não foi possível cadastrar usuário! - call_trace=/home/alysson/Documentos/full_stack_basic_application_api/application_api/app.py L51  
-[2023-05-03 03:52:07,771] INFO _log() L224  127.0.0.1 - - [03/May/2023 03:52:07] "[31m[1mPOST /usuario HTTP/1.1[0m" 400 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-03 03:52:31,336] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/model/usuario.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-03 03:52:31,444] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
-[2023-05-03 03:52:36,064] INFO _log() L224  127.0.0.1 - - [03/May/2023 03:52:36] "GET /usuarios HTTP/1.1" 200 - - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:57:09,586] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:57:21,925] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/model/__init__.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:57:22,021] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:57:55,579] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/model/__init__.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:57:55,675] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:58:03,965] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/model/__init__.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:58:04,062] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:58:07,284] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/model/__init__.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:58:07,357] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:58:23,732] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/model/base.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:58:23,824] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:59:02,380] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/model/comentario.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:59:02,462] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:59:13,777] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/model/usuario.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:59:13,879] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:59:29,214] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/model/usuario.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:59:29,295] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:59:34,544] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/model/usuario.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:59:34,652] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:59:47,983] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/schemas/__init__.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 03:59:48,072] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 04:00:19,580] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/schemas/usuario.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 04:00:19,693] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 04:00:32,030] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/schemas/usuario.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 04:00:32,123] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 04:00:39,399] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/schemas/usuario.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 04:00:39,507] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 04:01:45,360] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/app.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 04:01:45,450] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 04:01:51,733] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/app.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 04:01:51,843] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 04:01:55,067] INFO _log() L224   * Detected change in '/home/alysson/Documentos/full_stack_basic_application_api/application_api/app.py', reloading - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
+[2023-05-03 04:01:55,171] INFO _log() L224   * Restarting with stat - call_trace=/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/lib/python3.10/site-packages/werkzeug/_internal.py L224 
