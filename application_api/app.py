@@ -30,11 +30,11 @@ def add_usuario(form: UsuarioSchema):
         nome=form.nome)
     logger.debug(f"Adicionando usuário de login: '{usuario.login}'")
     try:
-        # criando conexão com a base
+        # Criando conexão com a base
         session = Session()
-        # adicionando usuario
+        # Adicionando usuario
         session.add(usuario)
-        # efetivando o camando de adição de novo usuário na tabela
+        # Efetivando o camando de adição de novo usuário na tabela
         session.commit()
         logger.debug(f"Adicionado usuario de login: '{usuario.login}'")
         return apresenta_usuario(usuario), 200
@@ -57,13 +57,13 @@ def add_usuario(form: UsuarioSchema):
 def get_usuarios():
  
     logger.debug(f"Buscando usuários...")
-    # criando conexão com a base
+    # Criando conexão com a base
     session = Session()
-    # fazendo a busca
+    # Fazendo a busca
     usuarios = session.query(Usuario).all()
 
     if not usuarios:
-        # se não há usuários cadastrados
+        # Se não há usuários cadastrados
         return {"usuarios": []}, 200
     else:
         logger.debug(f"%d Usuários encontrados" % len(usuarios))
@@ -96,7 +96,7 @@ def del_usuario(query: UsuarioBuscaSchema):
 
     usuario_login = unquote(unquote(query.login))
     logger.debug(f"Apagando dados do usuário #{usuario_login}")
-    # criando conexão com a base
+    # Criando conexão com a base
     session = Session()
     count = session.query(Usuario).filter(Usuario.login == usuario_login).delete()
     session.commit()
@@ -116,7 +116,7 @@ def add_comentario(form: ComentarioSchema):
     
     login  = form.login
     logger.debug(f"Adicionando comentário do usuário #{login}")
-    # criando conexão com a base
+    # Criando conexão com a base
     session = Session()
 
     usuario = session.query(Usuario).filter(Usuario.login == login).first()
@@ -126,15 +126,15 @@ def add_comentario(form: ComentarioSchema):
         logger.warning(f"Erro ao adicionar comentário do usuário '{login}', {error_msg}")
         return {"mensagem": error_msg}, 404
 
-    # criando o comentário
+    # Criando o comentário
     descricao = form.descricao
     comentario = Comentario(descricao)
 
-    # adicionando o comentário pelo usuário
+    # Adicionando o comentário pelo usuário
     usuario.adiciona_comentario(comentario)
     session.commit()
 
     logger.debug(f"Adicionado comentário do usuário #{login}")
 
-    # retorna a representação de produto
+    # Retorna a representação de produto
     return apresenta_usuario(usuario), 200

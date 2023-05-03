@@ -1,7 +1,6 @@
 from pydantic import BaseModel
 from typing import Optional, List
 from model.usuario import Usuario
-
 from schemas import ComentarioSchema
 
 
@@ -25,7 +24,6 @@ def apresenta_usuarios(usuarios: List[Usuario]):
             "login": usuario.login,
             "nome": usuario.nome
         })
-
     return {"usuarios": result}
 
 
