@@ -98,6 +98,8 @@ def del_usuario(query: UsuarioBuscaSchema):
     logger.debug(f"Apagando dados do usuário #{usuario_login}")
     # Criando conexão com a base
     session = Session()
+    countComentario = session.query(Comentario).filter(Comentario.usuario == usuario_login).delete()
+    session.commit()
     count = session.query(Usuario).filter(Usuario.login == usuario_login).delete()
     session.commit()
 
