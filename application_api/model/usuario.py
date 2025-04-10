@@ -15,7 +15,7 @@ class Usuario(Base):
     # Definição do relacionamento entre o usuário e o comentário.
     comentarios = relationship("Comentario", cascade="all,delete")
 
-    def __init__(self, id:int, login:str, nome:str, data_cadastro:Union[DateTime, None] = None):
+    def __init__(self, id:int , login:str, nome:str, data_cadastro:Union[DateTime, None] = None):
 
         self.id = id
         self.login = login
