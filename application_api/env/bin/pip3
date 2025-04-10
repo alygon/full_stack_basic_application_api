@@ -1,4 +1,4 @@
-#!/home/alysson/Documentos/desenvolvimento-full-stack/desenvolvimento-full-stack-basico/aula-3/meu_app_api/env/bin/python3
+#!/home/alysson/Documentos/full_stack_basic_application_api/application_api/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -7,7 +7,7 @@ from logger import logger
 from schemas import *
 from flask_cors import CORS
 
-info = Info(title="Application_API", version="1.0.0")
+info = Info(title="BackEnd_API", version="1.0.0")
 app = OpenAPI(__name__, info=info)
 CORS(app)
 
@@ -32,17 +32,17 @@ def add_usuario(form: UsuarioSchema):
     try:
         # Criando conexão com a base
         session = Session()
-        # Adicionando usuario
+        # Adicionando usuário
         session.add(usuario)
         # Efetivando o camando de adição de novo usuário na tabela
         session.commit()
-        logger.debug(f"Adicionado usuario de login: '{usuario.login}'")
+        logger.debug(f"Adicionado usuário de login: '{usuario.login}'")
         return apresenta_usuario(usuario), 200
 
     except IntegrityError as e:
         # Pode haver duplicidade
         error_msg = "Login de usuário já cadastrado!"
-        logger.warning(f"Erro ao adicionar usuário '{usuario.login}', {error_msg}")
+        logger.warning(f"Erro ao adicionar usuário! '{usuario.login}', {error_msg}")
         return {"mensagem": error_msg}, 409
 
     except Exception as e:

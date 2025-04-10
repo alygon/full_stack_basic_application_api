@@ -5,6 +5,7 @@ from schemas import ComentarioSchema
 
 
 class UsuarioSchema(BaseModel):
+    id: int = 1
     login: str = "alygon"
     nome: str = "Alysson Gonçalves"
 
@@ -21,6 +22,7 @@ def apresenta_usuarios(usuarios: List[Usuario]):
     result = []
     for usuario in usuarios:
         result.append({
+            "id": usuario.id,
             "login": usuario.login,
             "nome": usuario.nome
         })

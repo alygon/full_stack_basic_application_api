@@ -12,15 +12,16 @@ class Usuario(Base):
     nome = Column(String(40), unique=False)
     data_cadastro = Column(DateTime, default=datetime.now())
 
-    # Definição do relacionamento entre o produto e o comentário.
+    # Definição do relacionamento entre o usuário e o comentário.
     comentarios = relationship("Comentario", cascade="all,delete")
 
-    def __init__(self, login:str, nome:str, data_cadastro:Union[DateTime, None] = None):
+    def __init__(self, id:int, login:str, nome:str, data_cadastro:Union[DateTime, None] = None):
 
+        self.id = id
         self.login = login
         self.nome = nome
 
-        # Se não for informada, será o data exata da inserção no banco
+        # Se não for informada, será a data da inserção no banco
         if data_cadastro:
             self.data_cadastro = data_cadastro
     
