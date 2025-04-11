@@ -5,7 +5,6 @@ from schemas import ComentarioSchema
 
 
 class UsuarioSchema(BaseModel):
-    id: int = 1
     login: str = "alygon"
     nome: str = "Alysson Gonçalves"
 
@@ -30,7 +29,6 @@ def apresenta_usuarios(usuarios: List[Usuario]):
 
 
 class UsuarioViewSchema(BaseModel):
-    id: int = 1
     login: str = "alygon"
     nome: str = "Alysson Gonçalves"
     total_cometarios: int = 1

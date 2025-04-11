@@ -15,11 +15,9 @@ home_tag = Tag(name="Documentação", description="Seleção de documentação: 
 usuario_tag = Tag(name="Usuario", description="Adição, visualização e remoção de usuários à base")
 comentario_tag = Tag(name="Comentario", description="Adição e visualização de comentários à base")
 
-
 @app.get('/', tags=[home_tag])
 def home():
     return redirect('/openapi')
-
 
 @app.post('/usuario', tags=[usuario_tag],
           responses={"200": UsuarioViewSchema, "409": ErrorSchema, "400": ErrorSchema})
@@ -40,13 +38,11 @@ def add_usuario(form: UsuarioSchema):
         return apresenta_usuario(usuario), 200
 
     except IntegrityError as e:
-        # Pode haver duplicidade
         error_msg = "Login de usuário já cadastrado!"
         logger.warning(f"Erro ao adicionar usuário! '{usuario.login}', {error_msg}")
         return {"mensagem": error_msg}, 409
 
     except Exception as e:
-        # Erro no servidor
         error_msg = "Não foi possível cadastrar usuário!"
         logger.warning(f"Erro ao adicionar usuário '{usuario.login}', {error_msg}")
         return {"mensagem": error_msg}, 400
@@ -76,9 +72,9 @@ def get_usuario(query: UsuarioBuscaSchema):
    
     login = query.login
     logger.debug(f"Buscando usuário... #{login}")
-    # criando conexão com a base
+    # Criando conexão com a base
     session = Session()
-    # fazendo a busca
+    # Fazendo a busca
     usuario = session.query(Usuario).filter(Usuario.login == login).first()
 
     if not usuario:

@@ -7,7 +7,7 @@ from  model import Base, Comentario
 class Usuario(Base):
     __tablename__ = 'usuario'
 
-    id = Column("pk_usuario", Integer, primary_key=True)
+    id = Column("pk_usuario", Integer, primary_key=True, autoincrement=True)
     login = Column(String(15), unique=True)
     nome = Column(String(40), unique=False)
     data_cadastro = Column(DateTime, default=datetime.now())
@@ -15,9 +15,8 @@ class Usuario(Base):
     # Definição do relacionamento entre o usuário e o comentário.
     comentarios = relationship("Comentario", cascade="all,delete")
 
-    def __init__(self, id:int , login:str, nome:str, data_cadastro:Union[DateTime, None] = None):
+    def __init__(self, login:str, nome:str, data_cadastro:Union[DateTime, None] = None):
 
-        self.id = id
         self.login = login
         self.nome = nome
 
